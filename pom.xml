@@ -5,16 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.simple</groupId>
-    <artifactId>simplespec_2.9.1</artifactId>
+    <artifactId>simplespec_2.10.0-SNAPSHOT</artifactId>
     <version>0.6.0</version>
     <packaging>jar</packaging>
-    
+
     <name>simplespec for Scala ${scala.version}</name>
     <url>https://github.com/SimpleFinance/simplespec</url>
     <description>simplespec is a thin Scala wrapper over JUnit, featuring Hamcrest matchers, easy mocks, and literate test descriptions.</description>
 
     <properties>
-        <scala.version>2.9.1</scala.version>
+        <scala.version>2.10.0-SNAPSHOT</scala.version>
     </properties>
 
     <developers>
@@ -46,15 +46,15 @@
 
     <repositories>
         <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+          <id>sublimescala.release</id>
+          <name>SublimeScala maven release repository</name>
+          <url>https://bitbucket.org/sublimescala/nexus/raw/master/releases/</url>
+          <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+          <id>sublimescala.snapshot</id>
+          <name>SublimeScala maven snapshot repository</name>
+          <url>https://bitbucket.org/sublimescala/nexus/raw/master/snapshots</url>
         </repository>
     </repositories>
 
@@ -182,20 +182,6 @@
                         <exclude>**/*Test.java</exclude>
                     </excludes>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.2</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
         <extensions>
